@@ -2,63 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Photo Gallery</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
       margin: 0;
       padding: 0;
-      text-align: center;
+      color: #333;
     }
 
-    h1 {
+    header {
       background-color: #222;
       color: #fff;
-      margin: 0;
       padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    p {
-      font-size: 1.2em;
-      margin: 20px;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #555;
     }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .gallery img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
-      width: 300px;
-      border: 4px solid #ddd;
-      border-radius: 8px;
-      transition: transform 0.2s ease;
+      border-radius: 12px;
+      border: 4px solid #e0e0e0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .gallery img:hover {
-      transform: scale(1.05);
-      border-color: #aaa;
+      transform: scale(1.03);
+      border-color: #bbb;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+      margin: 40px 0 20px;
     }
   </style>
 </head>
 <body>
-  <h1>My Photo Gallery</h1>
-  <p>Here are some of my favorite shots.</p>
 
-  <div class="gallery">
-    <img src="images/1720531175352.jpg" alt="Photo 1" />
-    <!-- Add more images below as needed -->
-    <!-- Example:
-    <img src="images/photo2.jpg" alt="Photo 2" />
-    <img src="https://drive.google.com/uc?export=view&id=YOUR_IMAGE_ID" alt="Drive Photo" />
-    -->
-  </div>
+  <header>
+    <h1>My Photo Gallery</h1>
+  </header>
+
+  <main>
+    <p class="description">A collection of my favorite photos — enjoy browsing!</p>
+
+    <div class="gallery">
+      <img src="images/1720531175352.jpg" alt="Photo 1" />
+      <!-- Example additional images: -->
+      <!-- <img src="images/photo2.jpg" alt="Photo 2" /> -->
+      <!-- <img src="images/photo3.jpg" alt="Photo 3" /> -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 My Photo Gallery
+  </footer>
+
 </body>
 </html>
+
