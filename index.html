@@ -11,22 +11,23 @@
     }
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
       padding: 10px;
     }
 
     .gallery img {
-      width: 100%;
-      height: auto;
+      width: 250px;    /* fixed width */
+      height: 250px;   /* fixed height */
+      object-fit: cover; /* crop nicely */
       border-radius: 8px;
-      object-fit: cover;
       transition: transform 0.2s ease;
     }
 
     .gallery img:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
   </style>
 </head>
@@ -34,7 +35,7 @@
 
   <div class="gallery">
     <img src="images/1720531175352.jpg" alt="Photo 1" />
-    <!-- Add more images here -->
+    <!-- Add more images -->
     <!-- Example:
     <img src="images/photo2.jpg" alt="Photo 2" />
     <img src="images/photo3.jpg" alt="Photo 3" />
