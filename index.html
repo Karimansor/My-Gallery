@@ -2,73 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery</title>
+  <title>Love Gallery</title>
   <style>
-    body {
-      margin: 0;
-      background-color: #f9f9f9;
-    }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 10px;
-      padding: 10px;
+      justify-content: center;
     }
-
-    .gallery img {
-      width: 250px;    /* fixed width */
-      height: 250px;   /* fixed height */
-      object-fit: cover; /* crop nicely */
+    .card {
+      text-align: center;
+    }
+    .card img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
       border-radius: 8px;
-      transition: transform 0.2s ease;
     }
-
-    .gallery img:hover {
-      transform: scale(1.03);
+    button {
+      margin-top: 5px;
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <div class="gallery">
-  <img src="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" alt="e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" />
-  <img src="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" alt="5899c016-9891-4cd1-853e-7b96e230d587.jpg" />
-  <img src="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" alt="07ac23da-e373-4705-ab3c-551c4db540f7.jpg" />
-  <img src="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" alt="6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" />
-  <img src="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" alt="5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" />
-  <img src="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" alt="812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" />
-  <img src="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" alt="7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" />
-  <img src="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" alt="3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" />
-    <img src="images/1720531175352.jpg" alt="Photo 1" />
-    <img src="images/1720531175455.jpg" alt="Photo 2" />
-    <img src="images/IMG_20250106_151419.jpg" alt="IMG_20250106_151419.jpg" />
-    <img src="images/IMG_20250106_151419_2.jpg" alt="IMG_20250106_151419_2.jpg" />
-    <img src="images/IMG_20250106_151417_1.jpg" alt="IMG_20250106_151417_1.jpg" />
-    <img src="images/IMG_20241228_151930_1.jpg" alt="IMG_20241228_151930_1.jpg" />
-    <img src="images/IMG_20241228_151929_1.jpg" alt="IMG_20241228_151929_1.jpg" />
-    <img src="images/IMG_20241228_151928_1.jpg" alt="IMG_20241228_151928_1.jpg" />
-    <img src="images/IMG_20241228_151927_1.jpg" alt="IMG_20241228_151927_1.jpg" />
-    <img src="images/IMG_20241225_162943.jpg" alt="IMG_20241225_162943.jpg" />
-    <img src="images/IMG_20241224_124440.jpg" alt="IMG_20241224_124440.jpg" />
-    <img src="images/IMG_20241224_124312.jpg" alt="IMG_20241224_124312.jpg" />
-    <img src="images/IMG_20241224_124219.jpg" alt="IMG_20241224_124219.jpg" />
-    <img src="images/IMG_20241222_204838.jpg" alt="IMG_20241222_204838.jpg" />
-    <img src="images/IMG_20241222_172030.jpg" alt="IMG_20241222_172030.jpg" />
-    <img src="images/IMG_20241221_145928_1.jpg" alt="IMG_20241221_145928_1.jpg" />
-    <img src="images/IMG_20241221_145927_1.jpg" alt="IMG_20241221_145927_1.jpg" />
-    <img src="images/IMG_20241221_145926_1.jpg" alt="IMG_20241221_145926_1.jpg" />
-    <img src="images/IMG_20241221_145924.jpg" alt="IMG_20241221_145924.jpg" />
+  <div class="gallery" id="gallery"></div>
+  <script>
+    const username = "Karimansor";
+    const repo = "photo-gallery";
+    const workerURL = "https://workers-playground-polished-hall-c580.karman-jobs-72e.workers.dev/love";
 
+    const images = [
+      "e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg",
+      "5899c016-9891-4cd1-853e-7b96e230d587.jpg",
+      "07ac23da-e373-4705-ab3c-551c4db540f7.jpg",
+      "6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg",
+      "5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg",
+      "812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg",
+      "7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg",
+      "3a59ce60-14df-4ec3-9241-79c8584518dd.jpg",
+      "1720531175352.jpg",
+      "1720531175455.jpg",
+      "IMG_20250106_151419.jpg",
+      "IMG_20250106_151419_2.jpg",
+      "IMG_20250106_151417_1.jpg",
+      "IMG_20241228_151930_1.jpg",
+      "IMG_20241228_151929_1.jpg",
+      "IMG_20241228_151928_1.jpg",
+      "IMG_20241228_151927_1.jpg",
+      "IMG_20241225_162943.jpg",
+      "IMG_20241224_124440.jpg",
+      "IMG_20241224_124312.jpg",
+      "IMG_20241224_124219.jpg",
+      "IMG_20241222_204838.jpg",
+      "IMG_20241222_172030.jpg",
+      "IMG_20241221_145928_1.jpg",
+      "IMG_20241221_145927_1.jpg",
+      "IMG_20241221_145926_1.jpg",
+      "IMG_20241221_145924.jpg"
+    ];
 
-    <!-- Add more images -->
-    <!-- Example:
-    <img src="images/1720531175455.jpg" alt="Photo 2" />
-    <img src="images/photo3.jpg" alt="Photo 3" />
-    -->
-  </div>
+    async function loadLoves() {
+      const res = await fetch(`https://raw.githubusercontent.com/${username}/${repo}/main/loves.json`);
+      const data = await res.json();
+      const gallery = document.getElementById("gallery");
+      gallery.innerHTML = "";
+
+      images.forEach(img => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const imageEl = document.createElement("img");
+        imageEl.src = `images/${img}`;
+        imageEl.alt = img;
+
+        const count = document.createElement("p");
+        count.id = `count-${img}`;
+        count.textContent = `${data[img] || 0} ❤️`;
+
+        const btn = document.createElement("button");
+        btn.textContent = "Love";
+        btn.onclick = () => sendLove(img);
+
+        card.appendChild(imageEl);
+        card.appendChild(count);
+        card.appendChild(btn);
+        gallery.appendChild(card);
+      });
+    }
+
+    async function sendLove(imageName) {
+      const res = await fetch(`${workerURL}?image=${encodeURIComponent(imageName)}`);
+      if (res.ok) {
+        alert("Love added!");
+        setTimeout(loadLoves, 2000); // refresh after a short delay
+      } else {
+        alert("Failed to send love");
+        console.error(await res.text());
+      }
+    }
+
+    loadLoves();
+  </script>
 
 </body>
 </html>
