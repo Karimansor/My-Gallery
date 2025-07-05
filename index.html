@@ -18,22 +18,40 @@
       padding: 6px;
     }
 
-    .gallery a {
-      display: block;
+    .image-container {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
     }
 
-    .gallery img {
+    .image-container img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 6px;
       display: block;
       transition: transform 0.2s;
     }
 
-    .gallery img:hover {
+    .image-container img:hover {
       transform: scale(1.05);
       cursor: pointer;
+    }
+
+    .download-btn {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 4px 6px;
+      font-size: 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .image-container:hover .download-btn {
+      display: block;
     }
 
     .modal {
@@ -59,41 +77,40 @@
 <body>
 
   <div class="gallery">
-    <a href="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" download><img src="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" download><img src="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" download><img src="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" download><img src="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" download><img src="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" download><img src="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" download><img src="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" download><img src="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" download><img src="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" download><img src="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" download><img src="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" download><img src="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" download><img src="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/1720531175352.jpg" download><img src="images/1720531175352.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/1720531175455.jpg" download><img src="images/1720531175455.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20250106_151419.jpg" download><img src="images/IMG_20250106_151419.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20250106_151419_2.jpg" download><img src="images/IMG_20250106_151419_2.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20250106_151417_1.jpg" download><img src="images/IMG_20250106_151417_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241228_151930_1.jpg" download><img src="images/IMG_20241228_151930_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241228_151929_1.jpg" download><img src="images/IMG_20241228_151929_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241228_151928_1.jpg" download><img src="images/IMG_20241228_151928_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241228_151927_1.jpg" download><img src="images/IMG_20241228_151927_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241225_162943.jpg" download><img src="images/IMG_20241225_162943.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241224_124440.jpg" download><img src="images/IMG_20241224_124440.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241224_124312.jpg" download><img src="images/IMG_20241224_124312.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241224_124219.jpg" download><img src="images/IMG_20241224_124219.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241222_204838.jpg" download><img src="images/IMG_20241222_204838.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241222_172030.jpg" download><img src="images/IMG_20241222_172030.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241221_145928_1.jpg" download><img src="images/IMG_20241221_145928_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241221_145927_1.jpg" download><img src="images/IMG_20241221_145927_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241221_145926_1.jpg" download><img src="images/IMG_20241221_145926_1.jpg" onclick="openModal(this.src)" /></a>
-    <a href="images/IMG_20241221_145924.jpg" download><img src="images/IMG_20241221_145924.jpg" onclick="openModal(this.src)" /></a>
+    <div class="image-container"><img src="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" onclick="openModal(this.src)"><a href="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" onclick="openModal(this.src)"><a href="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" onclick="openModal(this.src)"><a href="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" onclick="openModal(this.src)"><a href="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" onclick="openModal(this.src)"><a href="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" onclick="openModal(this.src)"><a href="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" onclick="openModal(this.src)"><a href="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" onclick="openModal(this.src)"><a href="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" onclick="openModal(this.src)"><a href="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" onclick="openModal(this.src)"><a href="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" onclick="openModal(this.src)"><a href="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" onclick="openModal(this.src)"><a href="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" onclick="openModal(this.src)"><a href="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/1720531175352.jpg" onclick="openModal(this.src)"><a href="images/1720531175352.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/1720531175455.jpg" onclick="openModal(this.src)"><a href="images/1720531175455.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20250106_151419.jpg" onclick="openModal(this.src)"><a href="images/IMG_20250106_151419.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20250106_151419_2.jpg" onclick="openModal(this.src)"><a href="images/IMG_20250106_151419_2.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20250106_151417_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20250106_151417_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241228_151930_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151930_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241228_151929_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151929_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241228_151928_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151928_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241228_151927_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151927_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241225_162943.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241225_162943.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241224_124440.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241224_124440.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241224_124312.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241224_124312.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241224_124219.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241224_124219.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241222_204838.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241222_204838.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241222_172030.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241222_172030.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241221_145928_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145928_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241221_145927_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145927_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241221_145926_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145926_1.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/IMG_20241221_145924.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145924.jpg" download class="download-btn">⬇</a></div>
   </div>
 
-  <!-- Modal -->
   <div class="modal" id="modal" onclick="closeModal()">
     <img id="modal-img" />
   </div>
