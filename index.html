@@ -54,27 +54,8 @@
 
     .modal img {
       max-width: 90%;
-      max-height: 80%;
+      max-height: 90%;
       border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .share-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .share-buttons button {
-      padding: 6px 12px;
-      font-size: 14px;
-      background: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .share-buttons button:hover {
-      background: #eee;
     }
   </style>
 </head>
@@ -117,17 +98,10 @@
 
   <div class="modal" id="modal" onclick="closeModal(event)">
     <img id="modal-img" />
-    <div class="share-buttons">
-      <button onclick="copyLink()">Copy Link</button>
-      <button onclick="shareWhatsApp()">WhatsApp</button>
-    </div>
   </div>
 
   <script>
-    let currentSrc = '';
-
     function openModal(src) {
-      currentSrc = location.origin + '/' + src;
       const modal = document.getElementById('modal');
       const modalImg = document.getElementById('modal-img');
       modal.style.display = 'flex';
@@ -138,17 +112,6 @@
       if (e.target.id === 'modal' || e.target.id === 'modal-img') {
         document.getElementById('modal').style.display = 'none';
       }
-    }
-
-    function copyLink() {
-      navigator.clipboard.writeText(currentSrc).then(() => {
-        alert('Image link copied.');
-      });
-    }
-
-    function shareWhatsApp() {
-      const url = `https://wa.me/?text=${encodeURIComponent(currentSrc)}`;
-      window.open(url, '_blank');
     }
   </script>
 
