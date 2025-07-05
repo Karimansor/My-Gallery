@@ -17,50 +17,80 @@
       padding: 6px;
     }
 
+    .gallery a {
+      position: relative;
+      display: block;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
     .gallery img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 6px;
       display: block;
+      transition: opacity 0.3s;
+    }
+
+    .gallery a:hover img {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .gallery a::after {
+      content: '⬇';
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery a:hover::after {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
 
   <div class="gallery">
-     <img src="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg"/>
-     <img src="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg"/>
-     <img src="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg"/>
-     <img src="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg"/>
-     <img src="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg"/>
-    <img src="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" alt="" />
-    <img src="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" alt="" />
-    <img src="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" alt="" />
-    <img src="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" alt="" />
-    <img src="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" alt="" />
-    <img src="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" alt="" />
-    <img src="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" alt="" />
-    <img src="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" alt="" />
-    <img src="images/1720531175352.jpg" alt="" />
-    <img src="images/1720531175455.jpg" alt="" />
-    <img src="images/IMG_20250106_151419.jpg" alt="" />
-    <img src="images/IMG_20250106_151419_2.jpg" alt="" />
-    <img src="images/IMG_20250106_151417_1.jpg" alt="" />
-    <img src="images/IMG_20241228_151930_1.jpg" alt="" />
-    <img src="images/IMG_20241228_151929_1.jpg" alt="" />
-    <img src="images/IMG_20241228_151928_1.jpg" alt="" />
-    <img src="images/IMG_20241228_151927_1.jpg" alt="" />
-    <img src="images/IMG_20241225_162943.jpg" alt="" />
-    <img src="images/IMG_20241224_124440.jpg" alt="" />
-    <img src="images/IMG_20241224_124312.jpg" alt="" />
-    <img src="images/IMG_20241224_124219.jpg" alt="" />
-    <img src="images/IMG_20241222_204838.jpg" alt="" />
-    <img src="images/IMG_20241222_172030.jpg" alt="" />
-    <img src="images/IMG_20241221_145928_1.jpg" alt="" />
-    <img src="images/IMG_20241221_145927_1.jpg" alt="" />
-    <img src="images/IMG_20241221_145926_1.jpg" alt="" />
-    <img src="images/IMG_20241221_145924.jpg" alt="" />
+    <a href="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" download><img src="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg"/></a>
+    <a href="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" download><img src="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg"/></a>
+    <a href="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" download><img src="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg"/></a>
+    <a href="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" download><img src="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg"/></a>
+    <a href="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" download><img src="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg"/></a>
+    <a href="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" download><img src="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg"/></a>
+    <a href="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" download><img src="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg"/></a>
+    <a href="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" download><img src="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg"/></a>
+    <a href="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" download><img src="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg"/></a>
+    <a href="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" download><img src="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg"/></a>
+    <a href="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" download><img src="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg"/></a>
+    <a href="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" download><img src="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg"/></a>
+    <a href="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" download><img src="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg"/></a>
+    <a href="images/1720531175352.jpg" download><img src="images/1720531175352.jpg"/></a>
+    <a href="images/1720531175455.jpg" download><img src="images/1720531175455.jpg"/></a>
+    <a href="images/IMG_20250106_151419.jpg" download><img src="images/IMG_20250106_151419.jpg"/></a>
+    <a href="images/IMG_20250106_151419_2.jpg" download><img src="images/IMG_20250106_151419_2.jpg"/></a>
+    <a href="images/IMG_20250106_151417_1.jpg" download><img src="images/IMG_20250106_151417_1.jpg"/></a>
+    <a href="images/IMG_20241228_151930_1.jpg" download><img src="images/IMG_20241228_151930_1.jpg"/></a>
+    <a href="images/IMG_20241228_151929_1.jpg" download><img src="images/IMG_20241228_151929_1.jpg"/></a>
+    <a href="images/IMG_20241228_151928_1.jpg" download><img src="images/IMG_20241228_151928_1.jpg"/></a>
+    <a href="images/IMG_20241228_151927_1.jpg" download><img src="images/IMG_20241228_151927_1.jpg"/></a>
+    <a href="images/IMG_20241225_162943.jpg" download><img src="images/IMG_20241225_162943.jpg"/></a>
+    <a href="images/IMG_20241224_124440.jpg" download><img src="images/IMG_20241224_124440.jpg"/></a>
+    <a href="images/IMG_20241224_124312.jpg" download><img src="images/IMG_20241224_124312.jpg"/></a>
+    <a href="images/IMG_20241224_124219.jpg" download><img src="images/IMG_20241224_124219.jpg"/></a>
+    <a href="images/IMG_20241222_204838.jpg" download><img src="images/IMG_20241222_204838.jpg"/></a>
+    <a href="images/IMG_20241222_172030.jpg" download><img src="images/IMG_20241222_172030.jpg"/></a>
+    <a href="images/IMG_20241221_145928_1.jpg" download><img src="images/IMG_20241221_145928_1.jpg"/></a>
+    <a href="images/IMG_20241221_145927_1.jpg" download><img src="images/IMG_20241221_145927_1.jpg"/></a>
+    <a href="images/IMG_20241221_145926_1.jpg" download><img src="images/IMG_20241221_145926_1.jpg"/></a>
+    <a href="images/IMG_20241221_145924.jpg" download><img src="images/IMG_20241221_145924.jpg"/></a>
   </div>
 
 </body>
