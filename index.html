@@ -37,23 +37,6 @@
       cursor: pointer;
     }
 
-    .download-btn {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 4px 6px;
-      font-size: 12px;
-      text-decoration: none;
-      border-radius: 4px;
-      display: none;
-    }
-
-    .image-container:hover .download-btn {
-      display: block;
-    }
-
     .modal {
       display: none;
       position: fixed;
@@ -62,69 +45,110 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+      padding: 10px;
     }
 
     .modal img {
       max-width: 90%;
-      max-height: 90%;
+      max-height: 80%;
       border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .share-buttons button {
+      padding: 6px 12px;
+      font-size: 14px;
+      background: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .share-buttons button:hover {
+      background: #eee;
     }
   </style>
 </head>
 <body>
 
   <div class="gallery">
-    <div class="image-container"><img src="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" onclick="openModal(this.src)"><a href="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" onclick="openModal(this.src)"><a href="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" onclick="openModal(this.src)"><a href="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" onclick="openModal(this.src)"><a href="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" onclick="openModal(this.src)"><a href="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" onclick="openModal(this.src)"><a href="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" onclick="openModal(this.src)"><a href="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" onclick="openModal(this.src)"><a href="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" onclick="openModal(this.src)"><a href="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" onclick="openModal(this.src)"><a href="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" onclick="openModal(this.src)"><a href="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" onclick="openModal(this.src)"><a href="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" onclick="openModal(this.src)"><a href="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/1720531175352.jpg" onclick="openModal(this.src)"><a href="images/1720531175352.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/1720531175455.jpg" onclick="openModal(this.src)"><a href="images/1720531175455.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20250106_151419.jpg" onclick="openModal(this.src)"><a href="images/IMG_20250106_151419.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20250106_151419_2.jpg" onclick="openModal(this.src)"><a href="images/IMG_20250106_151419_2.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20250106_151417_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20250106_151417_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241228_151930_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151930_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241228_151929_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151929_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241228_151928_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151928_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241228_151927_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241228_151927_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241225_162943.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241225_162943.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241224_124440.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241224_124440.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241224_124312.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241224_124312.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241224_124219.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241224_124219.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241222_204838.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241222_204838.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241222_172030.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241222_172030.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241221_145928_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145928_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241221_145927_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145927_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241221_145926_1.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145926_1.jpg" download class="download-btn">⬇</a></div>
-    <div class="image-container"><img src="images/IMG_20241221_145924.jpg" onclick="openModal(this.src)"><a href="images/IMG_20241221_145924.jpg" download class="download-btn">⬇</a></div>
+    <div class="image-container"><img src="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/7eb2acf3-be8a-489f-9179-079d8418509e.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/b87f281c-e010-46dc-a405-4498f7d47880.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/a2ab463e-c78f-4aba-a71b-2c4cb3008feb.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/e42ef148-0950-4f0d-8f36-f23bf303ab57.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/5899c016-9891-4cd1-853e-7b96e230d587.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/07ac23da-e373-4705-ab3c-551c4db540f7.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/6d1ebd0d-aaf5-4ccc-8bae-5b808c82fdeb.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/5cca1358-a80c-463d-9fa8-d0d032687ed6.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/812ffdb3-6931-4574-b90d-dbf5ed0767c5.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/7122cc76-fa5e-4fef-b2aa-ceac0c86079d.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/3a59ce60-14df-4ec3-9241-79c8584518dd.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/1720531175352.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/1720531175455.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20250106_151419.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20250106_151419_2.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20250106_151417_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241228_151930_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241228_151929_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241228_151928_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241228_151927_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241225_162943.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241224_124440.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241224_124312.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241224_124219.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241222_204838.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241222_172030.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241221_145928_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241221_145927_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241221_145926_1.jpg" onclick="openModal(this.src)"></div>
+    <div class="image-container"><img src="images/IMG_20241221_145924.jpg" onclick="openModal(this.src)"></div>
   </div>
 
-  <div class="modal" id="modal" onclick="closeModal()">
+  <div class="modal" id="modal" onclick="closeModal(event)">
     <img id="modal-img" />
+    <div class="share-buttons">
+      <button onclick="copyLink()">Copy Link</button>
+      <button onclick="shareWhatsApp()">WhatsApp</button>
+    </div>
   </div>
 
   <script>
+    let currentSrc = '';
+
     function openModal(src) {
+      currentSrc = location.origin + '/' + src;
       const modal = document.getElementById('modal');
       const modalImg = document.getElementById('modal-img');
       modal.style.display = 'flex';
       modalImg.src = src;
     }
 
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
+    function closeModal(e) {
+      if (e.target.id === 'modal' || e.target.id === 'modal-img') {
+        document.getElementById('modal').style.display = 'none';
+      }
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(currentSrc).then(() => {
+        alert('Image link copied.');
+      });
+    }
+
+    function shareWhatsApp() {
+      const url = `https://wa.me/?text=${encodeURIComponent(currentSrc)}`;
+      window.open(url, '_blank');
     }
   </script>
 
