@@ -57,10 +57,31 @@
       max-height: 90%;
       border-radius: 8px;
     }
+
+    #music-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      padding: 6px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Music audio and toggle icon -->
+  <audio id="bg-music" loop>
+    <source src="The Strokes - The Adults Are Talking (Official Video) [ewOPQZZn4SY].mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="music-btn" onclick="toggleMusic()">🔊</button>
+
+  <!-- Gallery Images -->
   <div class="gallery">
     <div class="image-container"><img src="images/712904f1-84e3-4ba7-a49d-2c01788dc1f9.jpg" onclick="openModal(this.src)"></div>
     <div class="image-container"><img src="images/baa0da79-f337-4bdc-aaa5-c3f32a69af39.jpg" onclick="openModal(this.src)"></div>
@@ -96,6 +117,7 @@
     <div class="image-container"><img src="images/IMG_20241221_145924.jpg" onclick="openModal(this.src)"></div>
   </div>
 
+  <!-- Modal -->
   <div class="modal" id="modal" onclick="closeModal(event)">
     <img id="modal-img" />
   </div>
@@ -111,6 +133,26 @@
     function closeModal(e) {
       if (e.target.id === 'modal' || e.target.id === 'modal-img') {
         document.getElementById('modal').style.display = 'none';
+      }
+    }
+
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      music.volume = 0.5;
+      music.play().catch(() => {
+        btn.textContent = '🔇'; // Autoplay blocked
+      });
+    });
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btn.textContent = '🔊';
+      } else {
+        music.pause();
+        btn.textContent = '🔇';
       }
     }
   </script>
